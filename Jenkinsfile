@@ -25,6 +25,11 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deploying....'
+                sh'''
+                cd cicd
+                docker build -t dockerapp .
+                docker run dockerapp
+                '''
             }
         }
     }
