@@ -8,6 +8,7 @@ pipeline {
             steps {
                 echo 'Building..'
                 sh '''
+                cd cicd
                 mvn -B -DskipTests clean package
                 '''
             }
@@ -16,7 +17,8 @@ pipeline {
             steps {
                 echo 'Testing..'
                 sh '''
-                mvn MainTest.java
+                cd cicd
+                mvn test
                 '''
             }
         }
