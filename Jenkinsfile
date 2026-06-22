@@ -13,7 +13,7 @@ pipeline {
             steps {
                 echo 'Testing..'
                 sh '''
-                mvnd MainTest.java
+                mvn MainTest.java
                 '''
             }
         }
